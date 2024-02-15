@@ -43,3 +43,9 @@ Check Pipelines does the same for pipelines as the Check Indices does for indice
 
 # Dashboarding
 I havent had time to rebuild the dashboards for the logging data - this should be a short exercise if you apply your mind.
+The logging data is actually just an index called llm_interactions which captures: 
+- questions
+- responses
+- latency
+- costs
+- sentiment
