@@ -42,10 +42,9 @@ Delete Indices does what it says on the button
 Check Pipelines does the same for pipelines as the Check Indices does for indices
 
 # Dashboarding
-I havent had time to rebuild the dashboards for the logging data - this should be a short exercise if you apply your mind.
-The logging data is actually just an index called llm_interactions which captures: 
-- questions
-- responses
-- latency
-- costs
-- sentiment
+Dashboarding
+I havent had time to rebuild the dashboards for the logging data - this should be a short exercise if you’d like to try it. Here’s a few use cases I recommend:
+sentiment logger - are prompts and responses neutral, helpful, negative, positive?
+count users, interactions, queries
+count documents ingested, chunks created
+cost calculation for prompts, responses (token usage)
