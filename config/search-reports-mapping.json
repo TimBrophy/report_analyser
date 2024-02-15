@@ -1,0 +1,33 @@
+{
+    "properties": {
+        "report_name": {
+            "type": "text",
+            "fields": {
+                "keyword": {
+                    "type": "keyword"
+                }
+            }
+        },
+        "text": {
+            "type": "text"
+        },
+        "ml": {
+            "properties": {
+                "inference": {
+                    "properties": {
+                        "text_expanded": {
+                            "properties": {
+                                "model_id": {
+                                    "type": "keyword"
+                                },
+                                "predicted_value": {
+                                    "type": "rank_features"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
