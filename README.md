@@ -16,11 +16,9 @@ Node sizes can align to the following guidelines (but your own mileage may vary)
 3. 8GB RAM in 1 zones for machine learning nodes
 4. 1GB RAM in 1 zone for Kibana
 
-Enable the .elser_model_2_linux-x86_64 model in the Trained Models section of Kibana. Most likely this will be a
-download and then deploy operation.
+Enable the .elser_model_2_linux-x86_64 model in the Trained Models section of Kibana. Most likely this will be a download, and then deploy operation.
 
-I have also used the https://huggingface.co/ProsusAI/finbert model for sentiment analysis. You can change this if you want
-to but would need to update the pipeline configuration to leverage any new model.
+I have also used the https://huggingface.co/ProsusAI/finbert model for sentiment analysis. You can change this if you want to, but would need to update the pipeline configuration to leverage any new model.
 
 You need to download and deploy this model following the following Elastic documentation steps:
 https://www.elastic.co/guide/en/machine-learning/current/ml-nlp-deploy-models.html
@@ -31,18 +29,16 @@ In the root directory of the project (most likely 'report_analyser') create a py
 Activate the environment and install dependencies using the following command: $ pip install -r requirements.txt
 
 Copy the example_secrets file and create a file called secrets.toml.
-Complete all the details required, with at least one set of LLM credentials. Bear in mind that whichever LLM provider
-you choose not to use, you need to comment that option out in the dropdown or remove the LLM dropdown completely from the app.py file.
+Complete all the details required, with at least one set of LLM credentials. Bear in mind that whichever LLM provider you choose **not** to use, you need to comment that option out in the dropdown or remove the LLM dropdown completely from the app.py file. I would recommend using BOTH integrations so that you can have fun comparing answers. 
 
 ## Run
 Issue the command: streamlit run app.py and the application will open in a new browser window.
-Setup your data using the 'elastic tasks' menu item
-Check Indices looks for the required indices and if they dont exist, builds them
-Delete Indices does what it says on the button
-Check Pipelines does the same for pipelines as the Check Indices does for indices
+Setup your data using the 'elastic tasks' menu item:
+- Check Indices looks for the required indices and if they dont exist, builds them
+- Delete Indices does what it says on the button
+- Check Pipelines does the same for pipelines as the Check Indices does for indices
 
-# Dashboarding
-Dashboarding
+## Dashboarding
 I havent had time to rebuild the dashboards for the logging data - this should be a short exercise if you’d like to try it. 
 Here’s a few use cases I recommend:
 - sentiment logger - are prompts and responses neutral, helpful, negative, positive?
