@@ -15,7 +15,8 @@ which is a rapid prototyping tool and not a production grade deployment platform
 6. The way the PDF file is chunked upon ingest is also notable as it is done outside of Elastic within the app rather than inside an ingest pipeline. I've built it in Python purely based on convenience for me - it could be built in a pipeline using Painless scripting and essentially 'handed off' from the app (probably more robust and better for prod)
 
 ## Prerequisites
-An Elasticsearch cluster. The recommended option is an Elastic Cloud deployment which can be created easily and cost
+1. Python 3.x and up
+2. An Elasticsearch cluster. The recommended option is an Elastic Cloud deployment which can be created easily and cost
 effectively here: https://cloud.elastic.co
 
 Node sizes can align to the following guidelines (but your own mileage may vary):
@@ -30,6 +31,8 @@ I have also used the https://huggingface.co/ProsusAI/finbert model for sentiment
 
 You need to download and deploy this model following the following Elastic documentation steps:
 https://www.elastic.co/guide/en/machine-learning/current/ml-nlp-deploy-models.html
+
+3. Access to an LLM hosted with either AWS, Azure or both. (and of course the associated credentials) 
 
 ## Setup
 Download the contents of the repo to your local computer.
