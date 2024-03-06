@@ -6,6 +6,14 @@ but should not be used as a production application in any sense, as many of the 
 educational purposes rather than robustness. In addition, the main library used to render this app is Streamlit (streamlit.io)
 which is a rapid prototyping tool and not a production grade deployment platform (some may argue against this view).
 
+## Notable attributes of this repo
+1. This is effectively everything in-a-box with the least amount of manual setup needed (save for the dashboards which I will get to in a future version).
+2. It is a quick and easy way to learn RAG with simple to understand and verbose code that tries best not to obviscate the Elastic-goodness by using a library to do the vectorsearch portions of the app.
+3. I've implemented a simple cache to speed up QA responses and save unnecessary calls to the Cloud provider for questions the model has already answered. (this could also be built so much more comprehensively if I had more time)
+4. The cache includes a sentiment analysis feature to understand whether any LLM responses lean in either direction away from Neutral.
+5. I've also logged all answers along with costs based on provider so we can learn what the true cost of generative AI within a use case actually is.
+6. The way the PDF file is chunked upon ingest is also notable as it is done outside of Elastic within the app rather than inside an ingest pipeline. I've built it in Python purely based on convenience for me - it could be built in a pipeline using Painless scripting and essentially 'handed off' from the app (probably more robust and better for prod)
+
 ## Prerequisites
 An Elasticsearch cluster. The recommended option is an Elastic Cloud deployment which can be created easily and cost
 effectively here: https://cloud.elastic.co
