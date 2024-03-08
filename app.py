@@ -30,7 +30,8 @@ logging_pipeline = 'ml-inference-llm_logging'
 
 BASE_URL = os.environ['openai_api_base']
 API_KEY = os.environ['openai_api_key']
-DEPLOYMENT_NAME = "timb-fsi-demo"
+DEPLOYMENT_NAME = os.environ['deployment_name']
+
 st.session_state.llm = "azure"
 if st.session_state.llm == 'aws':
     st.session_state.llm_model = os.environ['aws_model_id']
@@ -316,3 +317,4 @@ if submitted:
     string_prompt = str(prompt)
     log_llm_interaction(question, string_prompt, current_chat_message, sent_time, received_time, report_source, answer_type)
     st.dataframe(df_results)
+
